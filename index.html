@@ -1,20 +1,32 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+
   <meta charset="UTF-8">
 
-  <meta name="viewport"
-        content="width=device-width, initial-scale=1.0">
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
 
-  <meta name="theme-color"
-        content="#0b0b0f">
+  <meta
+    name="theme-color"
+    content="#0b0b0f"
+  >
 
-  <meta name="description"
-        content="HA444 - HackerAPKs444">
+  <meta
+    name="description"
+    content="HA444 - HackerAPKs444"
+  >
 
   <title>HA444 - HackerAPKs444</title>
 
+
   <style>
+
+    /* =====================================================
+       RESET
+       ===================================================== */
 
     * {
       margin: 0;
@@ -22,286 +34,348 @@
       box-sizing: border-box;
     }
 
+
     html {
       scroll-behavior: smooth;
     }
 
+
     body {
       background: #0b0b0f;
       color: #ffffff;
-      font-family: Arial, sans-serif;
+      font-family: Arial, Helvetica, sans-serif;
       min-height: 100vh;
     }
+
 
     button,
     input {
       font-family: inherit;
     }
 
+
     button {
       cursor: pointer;
     }
 
+
     a {
-      text-decoration: none;
       color: inherit;
+      text-decoration: none;
     }
 
-    /* =========================================
-       HA444 HEADER
-       ========================================= */
+
+    /* =====================================================
+       HEADER
+       ===================================================== */
 
     .header {
-      position: sticky;
-      top: 0;
-      z-index: 1000;
-
+      width: 100%;
       height: 64px;
 
       display: flex;
       align-items: center;
       justify-content: space-between;
 
-      padding: 0 15px;
+      padding: 0 16px;
 
-      background: #111117;
-      border-bottom: 1px solid #272731;
+      background: #101016;
+
+      border-bottom: 1px solid #22222c;
+
+      position: sticky;
+      top: 0;
+      z-index: 1000;
     }
+
 
     .logo {
-      font-size: 23px;
-      font-weight: 800;
-      letter-spacing: 0.5px;
+      font-size: 25px;
+      font-weight: 900;
+      letter-spacing: -1px;
     }
 
+
     .logo span {
-      color: #8b7cff;
+      color: #7777ff;
     }
+
 
     .header-buttons {
       display: flex;
+      align-items: center;
       gap: 8px;
     }
+
 
     .header-btn {
       width: 42px;
       height: 42px;
 
-      border: 1px solid #30303a;
+      border: 1px solid #292934;
       border-radius: 12px;
 
-      background: #191920;
+      background: #17171f;
       color: #ffffff;
 
-      font-size: 18px;
+      font-size: 20px;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
     }
+
 
     .header-btn:active {
-      transform: scale(0.94);
+      transform: scale(0.96);
     }
 
-    /* =========================================
-       MAIN CONTAINER
-       ========================================= */
+
+    /* =====================================================
+       MAIN
+       ===================================================== */
 
     .container {
       width: 100%;
-      max-width: 950px;
+      max-width: 900px;
 
-      margin: auto;
+      margin: 0 auto;
 
-      padding: 18px 14px 50px;
+      padding: 20px 15px 40px;
     }
 
-    /* =========================================
-       HOME HERO
-       ========================================= */
+
+    /* =====================================================
+       SCREEN SYSTEM
+       ===================================================== */
+
+    .screen {
+      display: none;
+      animation: screenIn 0.25s ease;
+    }
+
+
+    .screen.active {
+      display: block;
+    }
+
+
+    @keyframes screenIn {
+
+      from {
+        opacity: 0;
+        transform: translateY(8px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+
+    }
+
+
+    /* =====================================================
+       HERO
+       ===================================================== */
 
     .hero {
-      padding: 12px 2px 18px;
+      padding: 18px 0 20px;
     }
+
 
     .hero h1 {
       font-size: 28px;
-      line-height: 1.2;
+      font-weight: 900;
+
       margin-bottom: 7px;
     }
 
+
     .hero p {
-      color: #9999a3;
+      color: #8b8b98;
       font-size: 14px;
     }
 
-    /* =========================================
+
+    /* =====================================================
        SEARCH
-       ========================================= */
+       ===================================================== */
 
     .search-box {
       position: relative;
-      width: 100%;
       margin-bottom: 18px;
     }
+
 
     .search-input {
       width: 100%;
 
-      padding: 14px 16px;
-      padding-right: 48px;
+      height: 50px;
 
-      border: 1px solid #2d2d38;
+      padding: 0 48px 0 16px;
+
+      border: 1px solid #292934;
       border-radius: 14px;
 
       outline: none;
 
-      background: #15151d;
+      background: #15151c;
       color: #ffffff;
 
       font-size: 15px;
     }
 
+
     .search-input::placeholder {
-      color: #777782;
+      color: #686873;
     }
 
+
     .search-input:focus {
-      border-color: #8b7cff;
+      border-color: #5555ff;
     }
+
 
     .search-icon {
       position: absolute;
 
-      right: 14px;
+      right: 16px;
       top: 50%;
 
       transform: translateY(-50%);
 
-      color: #888894;
-      font-size: 18px;
-
-      pointer-events: none;
-    }
-
-    /* =========================================
-       SECTION TITLE
-       ========================================= */
-
-    .section-title {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-
-      margin: 12px 0;
+      color: #777782;
 
       font-size: 18px;
-      font-weight: 700;
     }
 
-    /* =========================================
+
+    /* =====================================================
        CATEGORIES
-       ========================================= */
+       ===================================================== */
 
     .categories {
       display: flex;
+
       gap: 8px;
 
       overflow-x: auto;
 
-      padding: 2px 0 9px;
+      padding-bottom: 5px;
+
+      margin-bottom: 20px;
 
       scrollbar-width: none;
     }
+
 
     .categories::-webkit-scrollbar {
       display: none;
     }
 
+
     .category-btn {
-      flex-shrink: 0;
+      flex: 0 0 auto;
 
-      padding: 9px 14px;
+      border: 1px solid #292934;
 
-      border: 1px solid #2c2c37;
-      border-radius: 22px;
+      background: #15151c;
+      color: #a4a4af;
 
-      background: #17171f;
-      color: #c7c7cf;
+      border-radius: 20px;
+
+      padding: 9px 15px;
 
       font-size: 13px;
+
+      transition: 0.2s;
     }
+
 
     .category-btn.active {
-      background: #8b7cff;
-      border-color: #8b7cff;
-      color: #ffffff;
+      background: #ffffff;
+      color: #0b0b0f;
+      border-color: #ffffff;
     }
 
-    .category-btn:active {
-      transform: scale(0.96);
+
+    /* =====================================================
+       SECTION TITLE
+       ===================================================== */
+
+    .section-title {
+      display: flex;
+
+      align-items: center;
+      justify-content: space-between;
+
+      margin-bottom: 13px;
+
+      font-size: 18px;
+      font-weight: 800;
     }
 
-    /* =========================================
+
+    /* =====================================================
        APP GRID
-       ========================================= */
+       ===================================================== */
 
     .app-grid {
       display: grid;
 
       grid-template-columns:
-        repeat(auto-fill, minmax(260px, 1fr));
+        repeat(2, minmax(0, 1fr));
 
       gap: 12px;
     }
 
-    /* =========================================
+
+    /* =====================================================
        APP CARD
-       ========================================= */
+       ===================================================== */
 
     .app-card {
-      display: flex;
-      align-items: center;
-      gap: 12px;
+      background: #14141b;
 
-      padding: 13px;
+      border: 1px solid #252530;
 
-      background: #15151c;
+      border-radius: 17px;
 
-      border: 1px solid #292934;
-      border-radius: 16px;
+      padding: 12px;
+
+      overflow: hidden;
 
       transition:
-        transform 0.15s ease,
-        border-color 0.15s ease;
+        transform 0.2s ease,
+        border-color 0.2s ease;
     }
+
 
     .app-card:active {
       transform: scale(0.98);
     }
 
-    .app-card:hover {
-      border-color: #41414e;
-    }
 
     .app-icon {
-      width: 64px;
-      height: 64px;
+      width: 100%;
+      aspect-ratio: 1 / 1;
 
-      flex-shrink: 0;
+      display: block;
 
       object-fit: cover;
 
-      border-radius: 15px;
+      border-radius: 14px;
 
-      background: #222229;
+      background: #1d1d25;
+
+      margin-bottom: 11px;
     }
 
-    .app-info {
-      min-width: 0;
-      flex: 1;
-    }
 
     .app-name {
-      font-size: 16px;
-      font-weight: 700;
+      font-size: 15px;
+      font-weight: 800;
 
       white-space: nowrap;
       overflow: hidden;
@@ -310,86 +384,113 @@
       margin-bottom: 5px;
     }
 
-    .app-description {
-      color: #9999a3;
-
-      font-size: 12px;
-      line-height: 1.4;
-
-      display: -webkit-box;
-      -webkit-line-clamp: 2;
-      -webkit-box-orient: vertical;
-
-      overflow: hidden;
-    }
 
     .app-meta {
-      margin-top: 7px;
+      display: flex;
+      gap: 5px;
 
       color: #777782;
 
       font-size: 11px;
+
+      margin-bottom: 11px;
+
+      white-space: nowrap;
+      overflow: hidden;
     }
 
-    .view-btn {
-      display: block;
 
+    .view-btn {
       width: 100%;
 
-      margin-top: 9px;
-
-      padding: 8px 10px;
+      height: 38px;
 
       border: 0;
       border-radius: 10px;
 
-      background: #8b7cff;
-      color: #ffffff;
+      background: #ffffff;
+      color: #0b0b0f;
 
       font-size: 12px;
-      font-weight: 700;
+      font-weight: 800;
     }
 
-    .view-btn:active {
-      transform: scale(0.96);
-    }
 
-    /* =========================================
-       EMPTY MESSAGE
-       ========================================= */
+    /* =====================================================
+       BACK BUTTON
+       ===================================================== */
 
-    .empty-message {
-      width: 100%;
+    .back-btn {
+      display: inline-flex;
 
-      padding: 45px 15px;
+      align-items: center;
+      justify-content: center;
 
-      text-align: center;
+      min-height: 42px;
 
-      color: #777782;
+      padding: 0 15px;
+
+      margin-bottom: 17px;
+
+      border: 1px solid #292934;
+      border-radius: 12px;
+
+      background: #17171f;
+      color: #ffffff;
 
       font-size: 14px;
     }
 
-    /* =========================================
-       SCREEN SYSTEM
-       ========================================= */
 
-    .screen {
-      display: none;
+    /* =====================================================
+       FOOTER
+       ===================================================== */
+
+    .footer {
+      text-align: center;
+
+      color: #5f5f69;
+
+      font-size: 12px;
+
+      margin-top: 35px;
+
+      padding-top: 20px;
+
+      border-top: 1px solid #20202a;
     }
 
-    .screen.active {
-      display: block;
+
+    /* =====================================================
+       RESPONSIVE
+       ===================================================== */
+
+    @media (min-width: 700px) {
+
+      .app-grid {
+        grid-template-columns:
+          repeat(4, minmax(0, 1fr));
+      }
+
+      .container {
+        padding-left: 22px;
+        padding-right: 22px;
+      }
+
     }
+
 
   </style>
+
 </head>
+
 
 <body>
 
-  <!-- =========================================
-       HA444 HEADER
-       ========================================= -->
+
+  <!-- =====================================================
+       HEADER
+       ===================================================== -->
 
   <header class="header">
 
@@ -397,13 +498,15 @@
       HA<span>444</span>
     </div>
 
+
     <div class="header-buttons">
 
       <button
         class="header-btn"
         type="button"
-        onclick="showScreen('settings')"
-        aria-label="Settings">
+        onclick="showScreen('settingsScreen')"
+        aria-label="Settings"
+      >
         ⚙
       </button>
 
@@ -412,20 +515,21 @@
   </header>
 
 
-  <!-- =========================================
-       MAIN WEBSITE
-       ========================================= -->
+  <!-- =====================================================
+       MAIN CONTAINER
+       ===================================================== -->
 
   <main class="container">
 
 
-    <!-- =======================================
+    <!-- ===================================================
          HOME SCREEN
-         ======================================= -->
+         =================================================== -->
 
     <section
       id="homeScreen"
-      class="screen active">
+      class="screen active"
+    >
 
       <div class="hero">
 
@@ -449,7 +553,8 @@
           class="search-input"
           type="search"
           placeholder="Search apps..."
-          autocomplete="off">
+          autocomplete="off"
+        >
 
         <span class="search-icon">
           🔍
@@ -462,8 +567,8 @@
 
       <div
         id="categories"
-        class="categories">
-      </div>
+        class="categories"
+      ></div>
 
 
       <!-- APP TITLE -->
@@ -476,562 +581,153 @@
 
         <span
           id="appCount"
-          style="color:#777782;font-size:12px;">
+          style="
+            color:#777782;
+            font-size:12px;
+          "
+        >
           0 Apps
         </span>
 
       </div>
 
 
-      <!-- APP LIST -->
+      <!-- APP GRID -->
 
       <div
         id="appGrid"
-        class="app-grid">
-      </div>
+        class="app-grid"
+      ></div>
 
     </section>
 
 
-    <!-- =======================================
+
+    <!-- ===================================================
          APP DETAILS SCREEN
-         ======================================= -->
+         =================================================== -->
 
     <section
       id="detailsScreen"
-      class="screen">
+      class="screen"
+    >
 
       <button
-        class="header-btn"
+        class="back-btn"
         type="button"
         onclick="showScreen('homeScreen')"
-        style="margin-bottom:15px;width:auto;padding:0 14px;">
+      >
         ← Back
       </button>
 
-      <div
-        id="detailsContent">
-      </div>
+
+      <div id="detailsContent"></div>
 
     </section>
 
 
-    <!-- =======================================
+
+    <!-- ===================================================
          SETTINGS SCREEN
-         ======================================= -->
+         =================================================== -->
 
     <section
       id="settingsScreen"
-      class="screen">
+      class="screen"
+    >
 
       <button
-        class="header-btn"
+        class="back-btn"
         type="button"
         onclick="showScreen('homeScreen')"
-        style="margin-bottom:15px;width:auto;padding:0 14px;">
+      >
         ← Back
       </button>
+
 
       <div class="section-title">
         Settings
       </div>
 
-      <div id="settingsContent">
-      </div>
+
+      <div
+        id="settingsContent"
+      ></div>
 
     </section>
 
 
-    <!-- =======================================
+
+    <!-- ===================================================
          ABOUT SCREEN
-         ======================================= -->
+         =================================================== -->
 
     <section
       id="aboutScreen"
-      class="screen">
+      class="screen"
+    >
 
       <button
-        class="header-btn"
+        class="back-btn"
         type="button"
         onclick="showScreen('settingsScreen')"
-        style="margin-bottom:15px;width:auto;padding:0 14px;">
+      >
         ← Back
       </button>
 
+
       <div
-        id="aboutContent">
-      </div>
+        id="aboutContent"
+      ></div>
 
     </section>
 
 
-    <!-- =======================================
+
+    <!-- ===================================================
          PRIVACY SCREEN
-         ======================================= -->
+         =================================================== -->
 
     <section
       id="privacyScreen"
-      class="screen">
+      class="screen"
+    >
 
       <button
-        class="header-btn"
+        class="back-btn"
         type="button"
         onclick="showScreen('settingsScreen')"
-        style="margin-bottom:15px;width:auto;padding:0 14px;">
+      >
         ← Back
       </button>
 
+
       <div
-        id="privacyContent">
-      </div>
+        id="privacyContent"
+      ></div>
 
     </section>
 
 
-    <!-- =======================================
-         FOOTER
-         ======================================= -->
 
-    <footer
-      style="
-        text-align:center;
-        color:#5f5f69;
-        font-size:12px;
-        margin-top:35px;
-        padding-top:20px;
-        border-top:1px solid #20202a;
-      ">
+    <!-- ===================================================
+         FOOTER
+         =================================================== -->
+
+    <footer class="footer">
 
       HA444 • HackerAPKs444
 
     </footer>
 
+
   </main>
-  <style>
 
-    /* =========================================
-       APP DETAILS
-       ========================================= */
 
-    .details-box {
-      background: #15151c;
 
-      border: 1px solid #292934;
-      border-radius: 18px;
-
-      padding: 22px 17px;
-
-      text-align: center;
-    }
-
-    .details-icon {
-      width: 110px;
-      height: 110px;
-
-      object-fit: cover;
-
-      border-radius: 25px;
-
-      background: #222229;
-
-      margin-bottom: 15px;
-    }
-
-    .details-name {
-      font-size: 25px;
-      font-weight: 800;
-
-      margin-bottom: 8px;
-    }
-
-    .details-category {
-      color: #8b7cff;
-
-      font-size: 13px;
-
-      margin-bottom: 13px;
-    }
-
-    .details-description {
-      color: #aaaab4;
-
-      font-size: 14px;
-      line-height: 1.6;
-
-      margin: 12px 0 18px;
-    }
-
-    .details-info {
-      display: flex;
-
-      justify-content: center;
-
-      gap: 8px;
-
-      flex-wrap: wrap;
-
-      margin-bottom: 20px;
-    }
-
-    .info-box {
-      background: #1b1b23;
-
-      border: 1px solid #2c2c37;
-
-      border-radius: 11px;
-
-      padding: 9px 13px;
-
-      color: #aaaab4;
-
-      font-size: 12px;
-    }
-
-    .download-btn {
-      display: inline-flex;
-
-      align-items: center;
-      justify-content: center;
-
-      width: 100%;
-
-      min-height: 48px;
-
-      padding: 12px 18px;
-
-      border: 0;
-
-      border-radius: 13px;
-
-      background: #8b7cff;
-
-      color: #ffffff;
-
-      font-size: 15px;
-
-      font-weight: 800;
-
-      transition: transform 0.15s ease;
-    }
-
-    .download-btn:active {
-      transform: scale(0.97);
-    }
-
-    .download-btn.disabled {
-      background: #34343d;
-
-      color: #777782;
-
-      cursor: not-allowed;
-    }
-
-
-    /* =========================================
-       SETTINGS
-       ========================================= */
-
-    .settings-card {
-      background: #15151c;
-
-      border: 1px solid #292934;
-
-      border-radius: 17px;
-
-      overflow: hidden;
-
-      margin-bottom: 14px;
-    }
-
-    .settings-header {
-      padding: 18px;
-
-      border-bottom: 1px solid #292934;
-    }
-
-    .settings-header h2 {
-      font-size: 20px;
-
-      margin-bottom: 5px;
-    }
-
-    .settings-header p {
-      color: #858590;
-
-      font-size: 13px;
-    }
-
-    .settings-item {
-      width: 100%;
-
-      display: flex;
-
-      align-items: center;
-
-      justify-content: space-between;
-
-      gap: 12px;
-
-      padding: 16px 17px;
-
-      border: 0;
-
-      border-bottom: 1px solid #292934;
-
-      background: transparent;
-
-      color: #ffffff;
-
-      text-align: left;
-    }
-
-    .settings-item:last-child {
-      border-bottom: 0;
-    }
-
-    .settings-item:active {
-      background: #1b1b23;
-    }
-
-    .settings-left {
-      display: flex;
-
-      align-items: center;
-
-      gap: 12px;
-
-      min-width: 0;
-    }
-
-    .settings-icon {
-      width: 38px;
-      height: 38px;
-
-      display: flex;
-
-      align-items: center;
-      justify-content: center;
-
-      border-radius: 11px;
-
-      background: #1d1d26;
-
-      flex-shrink: 0;
-
-      font-size: 17px;
-    }
-
-    .settings-text strong {
-      display: block;
-
-      font-size: 14px;
-
-      margin-bottom: 3px;
-    }
-
-    .settings-text small {
-      color: #777782;
-
-      font-size: 11px;
-    }
-
-    .arrow {
-      color: #777782;
-
-      font-size: 18px;
-    }
-
-
-    /* =========================================
-       WEB VERSION
-       ========================================= */
-
-    .version-box {
-      background: #15151c;
-
-      border: 1px solid #292934;
-
-      border-radius: 17px;
-
-      padding: 18px;
-
-      margin-bottom: 14px;
-    }
-
-    .version-title {
-      color: #888893;
-
-      font-size: 12px;
-
-      margin-bottom: 7px;
-    }
-
-    .version-number {
-      font-size: 19px;
-
-      font-weight: 800;
-
-      letter-spacing: 0.5px;
-    }
-
-
-    /* =========================================
-       ABOUT / PRIVACY
-       ========================================= */
-
-    .info-page {
-      background: #15151c;
-
-      border: 1px solid #292934;
-
-      border-radius: 17px;
-
-      padding: 20px 17px;
-    }
-
-    .info-page h1 {
-      font-size: 23px;
-
-      margin-bottom: 13px;
-    }
-
-    .info-page h2 {
-      font-size: 16px;
-
-      margin-top: 20px;
-      margin-bottom: 8px;
-    }
-
-    .info-page p {
-      color: #aaaab4;
-
-      font-size: 14px;
-
-      line-height: 1.65;
-
-      margin-bottom: 10px;
-    }
-
-
-    /* =========================================
-       TELEGRAM BUTTON
-       ========================================= */
-
-    .telegram-button {
-      width: 100%;
-
-      display: flex;
-
-      align-items: center;
-
-      justify-content: center;
-
-      gap: 8px;
-
-      padding: 13px 15px;
-
-      margin-top: 12px;
-
-      border: 1px solid #30303b;
-
-      border-radius: 13px;
-
-      background: #1a1a22;
-
-      color: #ffffff;
-
-      font-weight: 700;
-    }
-
-    .telegram-button:active {
-      transform: scale(0.98);
-    }
-
-
-    /* =========================================
-       LOADING
-       ========================================= */
-
-    .loading {
-      text-align: center;
-
-      padding: 40px 10px;
-
-      color: #777782;
-    }
-
-    .loading-logo {
-      font-size: 26px;
-
-      font-weight: 800;
-
-      margin-bottom: 10px;
-    }
-
-    .loading-logo span {
-      color: #8b7cff;
-    }
-
-
-    /* =========================================
-       SMALL SCREEN
-       ========================================= */
-
-    @media (max-width: 480px) {
-
-      .container {
-        padding-left: 12px;
-        padding-right: 12px;
-      }
-
-      .app-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .app-card {
-        padding: 12px;
-      }
-
-      .app-icon {
-        width: 60px;
-        height: 60px;
-      }
-
-      .hero h1 {
-        font-size: 25px;
-      }
-
-      .details-name {
-        font-size: 23px;
-      }
-
-    }
-
-
-    /* =========================================
-       TABLET / DESKTOP
-       ========================================= */
-
-    @media (min-width: 700px) {
-
-      .header {
-        padding-left: 24px;
-        padding-right: 24px;
-      }
-
-      .container {
-        padding-left: 20px;
-        padding-right: 20px;
-      }
-
-    }
-
-  </style>
-
-
-  <!-- =========================================
+  <!-- =====================================================
        LOADING SCREEN
-       ========================================= -->
+       ===================================================== -->
 
   <div
     id="loadingScreen"
@@ -1039,19 +735,37 @@
       position:fixed;
       inset:0;
       z-index:9999;
+
       display:flex;
       align-items:center;
       justify-content:center;
+
       background:#0b0b0f;
-    ">
+    "
+  >
 
-    <div class="loading">
+    <div
+      style="
+        text-align:center;
+      "
+    >
 
-      <div class="loading-logo">
-        HA<span>444</span>
+      <div
+        style="
+          font-size:32px;
+          font-weight:900;
+          margin-bottom:10px;
+        "
+      >
+        HA<span style="color:#7777ff;">444</span>
       </div>
 
-      <div>
+      <div
+        style="
+          color:#777782;
+          font-size:13px;
+        "
+      >
         Loading...
       </div>
 
@@ -1060,402 +774,1160 @@
   </div>
 
 
-  <!-- =========================================
-       APP DETAILS TEMPLATE
-       JavaScript will fill this area
-       ========================================= -->
+  <!-- =====================================================
+       PART 1 ENDS HERE
+       ===================================================== -->
+  <!-- =====================================================
+     PART 2/3
+     DETAILS + SETTINGS + SOCIAL LINKS
+     ===================================================== -->
 
-  <template id="appDetailsTemplate">
 
-    <div class="details-box">
+<style>
+
+/* =========================================================
+   APP DETAILS
+   ========================================================= */
+
+.details-box {
+  background: #14141b;
+  border: 1px solid #252530;
+  border-radius: 18px;
+  padding: 18px;
+}
+
+
+.details-top {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin-bottom: 20px;
+}
+
+
+.details-icon {
+  width: 92px;
+  height: 92px;
+  flex: 0 0 92px;
+
+  object-fit: cover;
+
+  border-radius: 20px;
+
+  background: #1d1d25;
+
+  border: 1px solid #292934;
+}
+
+
+.details-name {
+  font-size: 23px;
+  font-weight: 900;
+
+  margin-bottom: 6px;
+}
+
+
+.details-category {
+  display: inline-block;
+
+  color: #9a9aa6;
+
+  font-size: 12px;
+
+  padding: 5px 9px;
+
+  border-radius: 8px;
+
+  background: #1d1d25;
+}
+
+
+.details-description-title {
+  font-size: 16px;
+  font-weight: 800;
+
+  margin: 20px 0 8px;
+}
+
+
+.details-description {
+  color: #a1a1ac;
+
+  font-size: 14px;
+
+  line-height: 1.7;
+
+  white-space: pre-line;
+}
+
+
+.details-info {
+  display: grid;
+
+  grid-template-columns:
+    repeat(2, minmax(0, 1fr));
+
+  gap: 10px;
+
+  margin-top: 18px;
+}
+
+
+.info-box {
+  background: #1b1b23;
+
+  border: 1px solid #282832;
+
+  border-radius: 12px;
+
+  padding: 12px;
+}
+
+
+.info-label {
+  color: #777782;
+
+  font-size: 11px;
+
+  margin-bottom: 5px;
+}
+
+
+.info-value {
+  color: #ffffff;
+
+  font-size: 13px;
+
+  font-weight: 700;
+}
+
+
+.download-btn {
+  width: 100%;
+
+  min-height: 50px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  margin-top: 20px;
+
+  border: 0;
+
+  border-radius: 13px;
+
+  background: #ffffff;
+  color: #0b0b0f;
+
+  font-size: 14px;
+  font-weight: 900;
+}
+
+
+/* =========================================================
+   SETTINGS
+   ========================================================= */
+
+.settings-card {
+  overflow: hidden;
+
+  background: #14141b;
+
+  border: 1px solid #252530;
+
+  border-radius: 17px;
+}
+
+
+.settings-header {
+  padding: 18px;
+
+  border-bottom: 1px solid #252530;
+}
+
+
+.settings-header-title {
+  font-size: 16px;
+  font-weight: 900;
+
+  margin-bottom: 5px;
+}
+
+
+.settings-header-text {
+  color: #777782;
+
+  font-size: 12px;
+
+  line-height: 1.5;
+}
+
+
+.settings-item {
+  width: 100%;
+
+  min-height: 65px;
+
+  display: flex;
+  align-items: center;
+
+  gap: 13px;
+
+  padding: 11px 15px;
+
+  border: 0;
+
+  border-bottom: 1px solid #22222c;
+
+  background: transparent;
+
+  color: #ffffff;
+
+  text-align: left;
+}
+
+
+.settings-item:last-child {
+  border-bottom: 0;
+}
+
+
+.settings-item:active {
+  background: #1b1b23;
+}
+
+
+.settings-left {
+  display: flex;
+
+  align-items: center;
+
+  gap: 13px;
+
+  flex: 1;
+}
+
+
+.settings-icon {
+  width: 40px;
+  height: 40px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  flex: 0 0 40px;
+
+  border-radius: 11px;
+
+  background: #1d1d25;
+
+  font-size: 18px;
+}
+
+
+.settings-text {
+  min-width: 0;
+}
+
+
+.settings-title {
+  font-size: 14px;
+
+  font-weight: 800;
+
+  margin-bottom: 3px;
+}
+
+
+.settings-subtitle {
+  color: #777782;
+
+  font-size: 11px;
+}
+
+
+.arrow {
+  color: #777782;
+
+  font-size: 18px;
+}
+
+
+.version-box {
+  margin-top: 15px;
+
+  padding: 16px;
+
+  border: 1px solid #252530;
+
+  border-radius: 15px;
+
+  background: #14141b;
+
+  text-align: center;
+}
+
+
+.version-title {
+  color: #777782;
+
+  font-size: 11px;
+
+  margin-bottom: 6px;
+}
+
+
+.version-number {
+  font-size: 18px;
+
+  font-weight: 900;
+}
+
+
+/* =========================================================
+   SOCIAL BUTTONS
+   ========================================================= */
+
+.social-button {
+  width: 100%;
+
+  min-height: 47px;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  margin-top: 15px;
+
+  border: 1px solid #292934;
+
+  border-radius: 12px;
+
+  background: #17171f;
+
+  color: #ffffff;
+
+  font-size: 13px;
+
+  font-weight: 800;
+}
+
+
+.social-button:active {
+  transform: scale(0.98);
+}
+
+
+.social-icon {
+  margin-right: 8px;
+
+  font-size: 17px;
+}
+
+
+/* =========================================================
+   INFORMATION PAGES
+   ========================================================= */
+
+.info-page {
+  background: #14141b;
+
+  border: 1px solid #252530;
+
+  border-radius: 17px;
+
+  padding: 18px;
+}
+
+
+.info-page h1 {
+  font-size: 23px;
+
+  margin-bottom: 18px;
+}
+
+
+.info-page h2 {
+  font-size: 15px;
+
+  margin-top: 20px;
+
+  margin-bottom: 8px;
+}
+
+
+.info-page p {
+  color: #a1a1ac;
+
+  font-size: 13px;
+
+  line-height: 1.7;
+}
+
+
+.info-page ul {
+  color: #a1a1ac;
+
+  font-size: 13px;
+
+  line-height: 1.8;
+
+  padding-left: 20px;
+}
+
+
+/* =========================================================
+   EMPTY STATE
+   ========================================================= */
+
+.empty-state {
+  grid-column: 1 / -1;
+
+  text-align: center;
+
+  padding: 55px 20px;
+
+  color: #777782;
+}
+
+
+.empty-icon {
+  font-size: 45px;
+
+  margin-bottom: 12px;
+}
+
+
+.empty-title {
+  color: #ffffff;
+
+  font-size: 17px;
+
+  font-weight: 800;
+
+  margin-bottom: 7px;
+}
+
+
+.empty-text {
+  font-size: 13px;
+}
+
+
+/* =========================================================
+   DESKTOP
+   ========================================================= */
+
+@media (min-width: 700px) {
+
+  .details-box {
+    padding: 25px;
+  }
+
+  .details-icon {
+    width: 115px;
+    height: 115px;
+    flex-basis: 115px;
+  }
+
+}
+
+</style>
+
+
+
+<!-- =====================================================
+     APP DETAILS TEMPLATE
+     ===================================================== -->
+
+<template id="appDetailsTemplate">
+
+  <div class="details-box">
+
+
+    <div class="details-top">
 
       <img
-        class="details-icon"
         id="detailsIcon"
+        class="details-icon"
         src=""
-        alt="App Icon">
+        alt="App"
+      >
 
-      <div
-        class="details-name"
-        id="detailsName">
-      </div>
 
-      <div
-        class="details-category"
-        id="detailsCategory">
-      </div>
+      <div>
 
-      <div class="details-info">
-
-        <div class="info-box">
-
-          Version:
-          <strong id="detailsVersion">
-          </strong>
-
+        <div
+          id="detailsName"
+          class="details-name"
+        >
+          App Name
         </div>
 
-        <div class="info-box">
 
-          Size:
-          <strong id="detailsSize">
-          </strong>
-
+        <div
+          id="detailsCategory"
+          class="details-category"
+        >
+          Category
         </div>
 
-      </div>
-
-      <div
-        class="details-description"
-        id="detailsDescription">
-      </div>
-
-      <a
-        id="detailsDownload"
-        class="download-btn"
-        href="#"
-        target="_blank"
-        rel="noopener noreferrer">
-
-        ⬇ Download APK
-
-      </a>
-
-    </div>
-
-  </template>
-
-
-  <!-- =========================================
-       SETTINGS CONTENT
-       ========================================= -->
-
-  <template id="settingsTemplate">
-
-    <div class="version-box">
-
-      <div class="version-title">
-        Web Version
-      </div>
-
-      <div class="version-number">
-        2.0000000
       </div>
 
     </div>
 
 
-    <div class="settings-card">
+    <div class="details-info">
 
-      <div class="settings-header">
+      <div class="info-box">
 
-        <h2>
-          HA444 Settings
-        </h2>
+        <div class="info-label">
+          Version
+        </div>
 
-        <p>
-          HackerAPKs444
-        </p>
+        <div
+          id="detailsVersion"
+          class="info-value"
+        >
+          -
+        </div>
 
       </div>
 
 
-      <button
-        class="settings-item"
-        type="button"
-        onclick="openTelegram()">
+      <div class="info-box">
 
-        <div class="settings-left">
-
-          <div class="settings-icon">
-            📢
-          </div>
-
-          <div class="settings-text">
-
-            <strong>
-              Telegram Channel
-            </strong>
-
-            <small>
-              Get app updates and announcements
-            </small>
-
-          </div>
-
+        <div class="info-label">
+          Size
         </div>
 
-        <div class="arrow">
-          →
+        <div
+          id="detailsSize"
+          class="info-value"
+        >
+          -
         </div>
 
-      </button>
-
-
-      <button
-        class="settings-item"
-        type="button"
-        onclick="showScreen('aboutScreen')">
-
-        <div class="settings-left">
-
-          <div class="settings-icon">
-            ℹ
-          </div>
-
-          <div class="settings-text">
-
-            <strong>
-              About HA444
-            </strong>
-
-            <small>
-              About this website
-            </small>
-
-          </div>
-
-        </div>
-
-        <div class="arrow">
-          →
-        </div>
-
-      </button>
-
-
-      <button
-        class="settings-item"
-        type="button"
-        onclick="showScreen('privacyScreen')">
-
-        <div class="settings-left">
-
-          <div class="settings-icon">
-            🔒
-          </div>
-
-          <div class="settings-text">
-
-            <strong>
-              Privacy Policy
-            </strong>
-
-            <small>
-              Read privacy information
-            </small>
-
-          </div>
-
-        </div>
-
-        <div class="arrow">
-          →
-        </div>
-
-      </button>
+      </div>
 
     </div>
 
+
+    <div class="details-description-title">
+      Description
+    </div>
+
+
+    <div
+      id="detailsDescription"
+      class="details-description"
+    >
+      No description available.
+    </div>
+
+
+    <a
+      id="detailsDownload"
+      class="download-btn"
+      href="#"
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      Download APK
+    </a>
+
+
+  </div>
+
+</template>
+
+
+
+<!-- =====================================================
+     SETTINGS TEMPLATE
+     ===================================================== -->
+
+<template id="settingsTemplate">
+
+  <div class="settings-card">
+
+
+    <div class="settings-header">
+
+      <div class="settings-header-title">
+        HA444 Settings
+      </div>
+
+      <div class="settings-header-text">
+        HackerAPKs444 website settings and information.
+      </div>
+
+    </div>
+
+
+    <!-- TELEGRAM -->
 
     <button
-      class="telegram-button"
-      type="button" 
-      onclick="openTelegram()">
+      class="settings-item"
+      type="button"
+      onclick="openTelegram()"
+    >
 
-      📢 Open HA444 Telegram
+      <div class="settings-left">
+
+        <div class="settings-icon">
+          ✈️
+        </div>
+
+
+        <div class="settings-text">
+
+          <div class="settings-title">
+            Telegram Community
+          </div>
+
+          <div class="settings-subtitle">
+            Join the HA444 community
+          </div>
+
+        </div>
+
+      </div>
+
+
+      <div class="arrow">
+        ›
+      </div>
 
     </button>
 
-  </template>
 
 
-  <!-- =========================================
-       ABOUT CONTENT
-       ========================================= -->
+    <!-- YOUTUBE -->
 
-  <template id="aboutTemplate">
+    <button
+      class="settings-item"
+      type="button"
+      onclick="openYouTube()"
+    >
 
-    <div class="info-page">
+      <div class="settings-left">
 
-      <h1>
-        About HA444
-      </h1>
+        <div class="settings-icon">
+          ▶️
+        </div>
 
-      <p>
-        Welcome to HA444, also known as HackerAPKs444.
-      </p>
 
-      <p>
-        HA444 is a simple platform for discovering
-        apps and opening their provided download links.
-      </p>
+        <div class="settings-text">
 
-      <h2>
-        Simple Downloads
-      </h2>
+          <div class="settings-title">
+            YouTube
+          </div>
 
-      <p>
-        App information is displayed directly on the
-        website and the download button opens the
-        download link provided for that app.
-      </p>
+          <div class="settings-subtitle">
+            Official YouTube channel
+          </div>
 
-      <h2>
-        Updates
-      </h2>
+        </div>
 
-      <p>
-        New app information can be added to the website
-        by updating the app data section in the code.
-      </p>
+      </div>
 
+
+      <div class="arrow">
+        ›
+      </div>
+
+    </button>
+
+
+
+    <!-- INSTAGRAM -->
+
+    <button
+      class="settings-item"
+      type="button"
+      onclick="openInstagram()"
+    >
+
+      <div class="settings-left">
+
+        <div class="settings-icon">
+          ◎
+        </div>
+
+
+        <div class="settings-text">
+
+          <div class="settings-title">
+            Instagram
+          </div>
+
+          <div class="settings-subtitle">
+            Official Instagram profile
+          </div>
+
+        </div>
+
+      </div>
+
+
+      <div class="arrow">
+        ›
+      </div>
+
+    </button>
+
+
+
+    <!-- ABOUT -->
+
+    <button
+      class="settings-item"
+      type="button"
+      onclick="showScreen('aboutScreen')"
+    >
+
+      <div class="settings-left">
+
+        <div class="settings-icon">
+          ℹ️
+        </div>
+
+
+        <div class="settings-text">
+
+          <div class="settings-title">
+            About
+          </div>
+
+          <div class="settings-subtitle">
+            About HackerAPKs444
+          </div>
+
+        </div>
+
+      </div>
+
+
+      <div class="arrow">
+        ›
+      </div>
+
+    </button>
+
+
+
+    <!-- PRIVACY -->
+
+    <button
+      class="settings-item"
+      type="button"
+      onclick="showScreen('privacyScreen')"
+    >
+
+      <div class="settings-left">
+
+        <div class="settings-icon">
+          🔒
+        </div>
+
+
+        <div class="settings-text">
+
+          <div class="settings-title">
+            Privacy Policy
+          </div>
+
+          <div class="settings-subtitle">
+            Privacy information
+          </div>
+
+        </div>
+
+      </div>
+
+
+      <div class="arrow">
+        ›
+      </div>
+
+    </button>
+
+
+  </div>
+
+
+
+  <!-- VERSION -->
+
+  <div class="version-box">
+
+    <div class="version-title">
+      Web Version
     </div>
 
-  </template>
-
-
-  <!-- =========================================
-       PRIVACY CONTENT
-       ========================================= -->
-
-  <template id="privacyTemplate">
-
-    <div class="info-page">
-
-      <h1>
-        Privacy Policy
-      </h1>
-
-      <p>
-        HA444 does not require users to create an account
-        to browse the website.
-      </p>
-
-      <h2>
-        Third-Party Links
-      </h2>
-
-      <p>
-        Download buttons may open third-party services,
-        including Google Drive or other external websites.
-        Those services may have their own privacy policies
-        and terms.
-      </p>
-
-      <h2>
-        Information Collection
-      </h2>
-
-      <p>
-        This static website does not intentionally collect
-        personal information through a login or account system.
-      </p>
-
+    <div class="version-number">
+      2.0000000
     </div>
 
-  </template>
-  <script>
+  </div>
+
+</template>
+
+
+
+<!-- =====================================================
+     ABOUT TEMPLATE
+     ===================================================== -->
+
+<template id="aboutTemplate">
+
+  <div class="info-page">
+
+    <h1>
+      About HA444
+    </h1>
+
+
+    <p>
+      HackerAPKs444 is a simple app discovery and
+      download website.
+    </p>
+
+
+    <h2>
+      What is HA444?
+    </h2>
+
+
+    <p>
+      HA444 allows visitors to browse apps, search
+      apps by name, view app information and open
+      the provided download link.
+    </p>
+
+
+    <h2>
+      Website
+    </h2>
+
+
+    <p>
+      This website is hosted using GitHub Pages.
+      App information is maintained directly in
+      the website code.
+    </p>
+
+
+    <h2>
+      Downloads
+    </h2>
+
+
+    <p>
+      Download buttons may open Google Drive or
+      other third-party services. Those services
+      may have their own terms and privacy policies.
+    </p>
+
+
+    <h2>
+      Community
+    </h2>
+
+
+    <p>
+      Join the HA444 Telegram community from the
+      Settings section to communicate with other
+      members.
+    </p>
+
+  </div>
+
+</template>
+
+
+
+<!-- =====================================================
+     PRIVACY TEMPLATE
+     ===================================================== -->
+
+<template id="privacyTemplate">
+
+  <div class="info-page">
+
+    <h1>
+      Privacy Policy
+    </h1>
+
+
+    <p>
+      HA444 is designed as a simple static website.
+    </p>
+
+
+    <h2>
+      Accounts
+    </h2>
+
+
+    <p>
+      HA444 does not require visitors to create an
+      account or log in to browse the website.
+    </p>
+
+
+    <h2>
+      Personal Information
+    </h2>
+
+
+    <p>
+      The website does not intentionally collect
+      personal information through a login or
+      account system.
+    </p>
+
+
+    <h2>
+      Third-Party Links
+    </h2>
+
+
+    <p>
+      Download buttons and social links may open
+      third-party services such as Google Drive,
+      Telegram, YouTube or Instagram.
+    </p>
+
+
+    <h2>
+      Third-Party Policies
+    </h2>
+
+
+    <p>
+      Third-party websites and services have their
+      own privacy policies and terms. Please review
+      their policies when using those services.
+    </p>
+
+
+    <h2>
+      Updates
+    </h2>
+
+
+    <p>
+      This privacy information may be updated when
+      the website features change.
+    </p>
+
+  </div>
+
+</template>
+
+
+
+<!-- =====================================================
+     PART 2 ENDS HERE
+     ===================================================== -->
+  <!-- =====================================================
+     PART 3/3
+     JAVASCRIPT + APP DATA + SOCIAL LINKS
+     ===================================================== -->
+
+<script>
+
 
 /* =========================================================
-   HA444 - HACKERAPKS444
+   SOCIAL LINKS
+   ========================================================= */
+
+/*
+   TELEGRAM
+   Already added your HA444 Community group.
+*/
+
+const TELEGRAM_LINK =
+  "https://t.me/+uKLnUPsij7AwYzZl";
+
+
+/*
+   YOUTUBE
+   जब YouTube channel बनाओ तो सिर्फ नीचे link बदलना।
+*/
+
+const YOUTUBE_LINK =
+  "YOUR_YOUTUBE_LINK";
+
+
+/*
+   INSTAGRAM
+   जब Instagram शुरू करो तो सिर्फ नीचे link बदलना।
+*/
+
+const INSTAGRAM_LINK =
+  "YOUR_INSTAGRAM_LINK";
+
+
+
+/* =========================================================
    APP DATA
-   EDIT / ADD YOUR APPS HERE
    ========================================================= */
 
-const TELEGRAM_CHANNEL = "YOUR_TELEGRAM_CHANNEL_LINK";
+/*
+   हर app का data इसी section में डालना है।
+
+   name        = App name
+   image       = Public image link
+   version     = App version
+   size        = APK size
+   description = App description
+   category    = App category
+   download    = Google Drive APK link
 
 
-/* =========================================================
-   ADD YOUR APPS BELOW
-   ========================================================= */
+   IMPORTANT:
+   नीचे दिए example को बाद में अपनी app से replace कर देना.
+*/
+
 
 const apps = [
 
   {
     name: "Your App Name",
-    image: "YOUR_IMAGE_URL",
+
+    image: "YOUR_PUBLIC_IMAGE_LINK",
+
     version: "1.0.0",
+
     size: "100 MB",
-    description: "Write your app description here.",
+
+    description:
+      "Write your app description here.",
+
     category: "Tools",
-    download: "YOUR_GOOGLE_DRIVE_LINK"
+
+    download:
+      "YOUR_GOOGLE_DRIVE_APK_LINK"
   },
 
 
 
-  // =====================================================
-  // ADD NEXT APP HERE
-  // =====================================================
+  /* =====================================================
+     ADD NEXT APP HERE
+     ===================================================== */
 
 
 
-  // =====================================================
-  // ADD NEXT APP HERE
-  // =====================================================
+  /* =====================================================
+     ADD NEXT APP HERE
+     ===================================================== */
 
 
 
-  // =====================================================
-  // ADD NEXT APP HERE
-  // =====================================================
+  /* =====================================================
+     ADD NEXT APP HERE
+     ===================================================== */
 
 
 
-  // =====================================================
-  // ADD NEXT APP HERE
-  // =====================================================
+  /* =====================================================
+     ADD NEXT APP HERE
+     ===================================================== */
+
+
+
+  /* =====================================================
+     ADD NEXT APP HERE
+     ===================================================== */
 
 ];
 
 
+
 /* =========================================================
-   HELPER FUNCTIONS
+   CURRENT CATEGORY
+   ========================================================= */
+
+let selectedCategory = "All";
+
+
+
+/* =========================================================
+   TEXT SAFETY
    ========================================================= */
 
 function safeText(value) {
+
   return String(value ?? "")
     .replace(/&/g, "&amp;")
     .replace(/</g, "&lt;")
     .replace(/>/g, "&gt;")
     .replace(/"/g, "&quot;")
     .replace(/'/g, "&#039;");
+
 }
 
-
-function fallbackImage(element) {
-  element.onerror = null;
-  element.src =
-    "data:image/svg+xml;charset=UTF-8," +
-    encodeURIComponent(`
-      <svg xmlns="http://www.w3.org/2000/svg"
-           width="500"
-           height="500"
-           viewBox="0 0 500 500">
-        <rect width="500" height="500" fill="#17171f"/>
-        <text x="50%" y="50%"
-              dominant-baseline="middle"
-              text-anchor="middle"
-              fill="#777"
-              font-family="Arial"
-              font-size="42">
-          HA444
-        </text>
-      </svg>
-    `);
-}
 
 
 /* =========================================================
-   CATEGORIES
+   FALLBACK IMAGE
    ========================================================= */
 
-let selectedCategory = "All";
+function fallbackImage(element) {
 
+  element.onerror = null;
+
+  element.src =
+    "data:image/svg+xml;charset=UTF-8," +
+    encodeURIComponent(`
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        width="500"
+        height="500"
+        viewBox="0 0 500 500"
+      >
+
+        <rect
+          width="500"
+          height="500"
+          fill="#17171f"
+        />
+
+        <text
+          x="50%"
+          y="50%"
+          dominant-baseline="middle"
+          text-anchor="middle"
+          fill="#777"
+          font-family="Arial"
+          font-size="42"
+        >
+          HA444
+        </text>
+
+      </svg>
+    `);
+
+}
+
+
+
+/* =========================================================
+   RENDER CATEGORIES
+   ========================================================= */
 
 function renderCategories() {
 
-  const categoriesBox = document.getElementById("categories");
+  const categoriesBox =
+    document.getElementById("categories");
+
 
   const categoryList = [
     "All",
@@ -1466,167 +1938,226 @@ function renderCategories() {
     )
   ];
 
-  categoriesBox.innerHTML = categoryList.map(category => {
 
-    const active =
-      category === selectedCategory
-        ? "active"
-        : "";
+  categoriesBox.innerHTML =
+    categoryList.map(category => {
 
-    return `
-      <button
-        class="category-btn ${active}"
-        type="button"
-        onclick="selectCategory('${safeText(category)}')">
-        ${safeText(category)}
-      </button>
-    `;
+      const active =
+        category === selectedCategory
+          ? "active"
+          : "";
 
-  }).join("");
+
+      return `
+        <button
+          class="category-btn ${active}"
+          type="button"
+          onclick="selectCategory(${JSON.stringify(category)})"
+        >
+          ${safeText(category)}
+        </button>
+      `;
+
+    }).join("");
+
 }
 
-
-function selectCategory(category) {
-
-  selectedCategory = category;
-
-  renderCategories();
-  renderApps();
-}
 
 
 /* =========================================================
-   APP CARDS
+   SELECT CATEGORY
+   ========================================================= */
+
+function selectCategory(category) {
+
+  selectedCategory =
+    category;
+
+  renderCategories();
+
+  renderApps();
+
+}
+
+
+
+/* =========================================================
+   RENDER APPS
    ========================================================= */
 
 function renderApps() {
 
-  const grid = document.getElementById("appGrid");
-  const searchInput = document.getElementById("searchInput");
+  const grid =
+    document.getElementById("appGrid");
+
+
+  const searchInput =
+    document.getElementById("searchInput");
+
 
   const searchText =
-    searchInput.value.trim().toLowerCase();
-
-  const filteredApps = apps.filter(app => {
-
-    const matchesCategory =
-      selectedCategory === "All" ||
-      app.category === selectedCategory;
-
-    const searchableText = `
-      ${app.name || ""}
-      ${app.description || ""}
-      ${app.category || ""}
-      ${app.version || ""}
-    `.toLowerCase();
-
-    const matchesSearch =
-      searchableText.includes(searchText);
-
-    return matchesCategory && matchesSearch;
-  });
+    searchInput.value
+      .trim()
+      .toLowerCase();
 
 
-  document.getElementById("appCount").textContent =
-    `${filteredApps.length} Apps`;
+  const filteredApps =
+    apps.filter(app => {
 
+
+      const matchesCategory =
+        selectedCategory === "All" ||
+        app.category === selectedCategory;
+
+
+      const searchableText = `
+        ${app.name || ""}
+        ${app.description || ""}
+        ${app.category || ""}
+        ${app.version || ""}
+      `.toLowerCase();
+
+
+      const matchesSearch =
+        searchableText.includes(searchText);
+
+
+      return (
+        matchesCategory &&
+        matchesSearch
+      );
+
+    });
+
+
+
+  /* APP COUNT */
+
+  document.getElementById("appCount")
+    .textContent =
+      `${filteredApps.length} Apps`;
+
+
+
+  /* NO RESULT */
 
   if (filteredApps.length === 0) {
 
     grid.innerHTML = `
-      <div style="
-        grid-column:1/-1;
-        text-align:center;
-        padding:50px 20px;
-        color:#777782;
-      ">
-        <div style="font-size:45px;margin-bottom:12px;">
+
+      <div class="empty-state">
+
+        <div class="empty-icon">
           🔍
         </div>
 
-        <div style="
-          color:#fff;
-          font-size:17px;
-          font-weight:bold;
-          margin-bottom:7px;
-        ">
+        <div class="empty-title">
           No Apps Found
         </div>
 
-        <div style="font-size:13px;">
+        <div class="empty-text">
           Try another search or category.
         </div>
+
       </div>
+
     `;
 
     return;
   }
 
 
-  grid.innerHTML = filteredApps.map((app, index) => {
 
-    const image =
-      app.image ||
-      "data:image/svg+xml;charset=UTF-8," +
-      encodeURIComponent(`
-        <svg xmlns="http://www.w3.org/2000/svg"
-             width="500"
-             height="500">
-          <rect width="500" height="500" fill="#17171f"/>
-          <text x="50%" y="50%"
-                dominant-baseline="middle"
-                text-anchor="middle"
-                fill="#777"
-                font-family="Arial"
-                font-size="42">
-            HA444
-          </text>
-        </svg>
-      `);
+  /* APP CARDS */
+
+  grid.innerHTML =
+    filteredApps.map(app => {
 
 
-    return `
-      <article class="app-card">
+      /*
+        Find the original index.
+        This makes details work correctly
+        even after search/category filtering.
+      */
 
-        <img
-          class="app-icon"
-          src="${safeText(image)}"
-          alt="${safeText(app.name)}"
-          onerror="fallbackImage(this)"
-        >
+      const originalIndex =
+        apps.indexOf(app);
 
-        <div class="app-info">
 
-          <h3 class="app-name">
-            ${safeText(app.name || "Unnamed App")}
-          </h3>
+      return `
 
-          <div class="app-meta">
-            <span>
-              ${safeText(app.category || "Other")}
-            </span>
+        <article class="app-card">
 
-            <span>•</span>
+          <img
+            class="app-icon"
+            src="${safeText(
+              app.image || ""
+            )}"
+            alt="${safeText(
+              app.name || "App"
+            )}"
+            onerror="fallbackImage(this)"
+          >
 
-            <span>
-              ${safeText(app.version || "Unknown")}
-            </span>
+
+          <div class="app-info">
+
+            <h3 class="app-name">
+              ${safeText(
+                app.name || "Unnamed App"
+              )}
+            </h3>
+
+
+            <div class="app-meta">
+
+              <span>
+                ${safeText(
+                  app.category || "Other"
+                )}
+              </span>
+
+              <span>
+                •
+              </span>
+
+              <span>
+                ${safeText(
+                  app.version || "Unknown"
+                )}
+              </span>
+
+              <span>
+                •
+              </span>
+
+              <span>
+                ${safeText(
+                  app.size || "Unknown"
+                )}
+              </span>
+
+            </div>
+
+
+            <button
+              class="view-btn"
+              type="button"
+              onclick="openDetails(${originalIndex})"
+            >
+              View App
+            </button>
+
           </div>
 
-          <button
-            class="view-btn"
-            type="button"
-            onclick="openDetails(${index})">
-            View App
-          </button>
+        </article>
 
-        </div>
+      `;
 
-      </article>
-    `;
+    }).join("");
 
-  }).join("");
 }
+
 
 
 /* =========================================================
@@ -1635,81 +2166,126 @@ function renderApps() {
 
 function openDetails(index) {
 
-  const app = apps[index];
+  const app =
+    apps[index];
 
-  if (!app) return;
+
+  if (!app) {
+    return;
+  }
 
 
   const detailsContent =
-    document.getElementById("detailsContent");
+    document.getElementById(
+      "detailsContent"
+    );
+
 
   const template =
-    document.getElementById("appDetailsTemplate");
+    document.getElementById(
+      "appDetailsTemplate"
+    );
 
 
   detailsContent.innerHTML =
     template.innerHTML;
 
 
+
+  /* APP IMAGE */
+
   const icon =
-    document.getElementById("detailsIcon");
-
-  const name =
-    document.getElementById("detailsName");
-
-  const category =
-    document.getElementById("detailsCategory");
-
-  const version =
-    document.getElementById("detailsVersion");
-
-  const size =
-    document.getElementById("detailsSize");
-
-  const description =
-    document.getElementById("detailsDescription");
-
-  const download =
-    document.getElementById("detailsDownload");
+    document.getElementById(
+      "detailsIcon"
+    );
 
 
   icon.src =
     app.image || "";
 
+
   icon.alt =
     app.name || "App";
 
+
   icon.onerror =
     function() {
+
       fallbackImage(this);
+
     };
 
 
-  name.textContent =
-    app.name || "Unnamed App";
 
-  category.textContent =
-    app.category || "Other";
+  /* APP NAME */
 
-  version.textContent =
-    app.version || "Unknown";
+  document.getElementById(
+    "detailsName"
+  ).textContent =
+    app.name ||
+    "Unnamed App";
 
-  size.textContent =
-    app.size || "Unknown";
 
-  description.textContent =
+
+  /* CATEGORY */
+
+  document.getElementById(
+    "detailsCategory"
+  ).textContent =
+    app.category ||
+    "Other";
+
+
+
+  /* VERSION */
+
+  document.getElementById(
+    "detailsVersion"
+  ).textContent =
+    app.version ||
+    "Unknown";
+
+
+
+  /* SIZE */
+
+  document.getElementById(
+    "detailsSize"
+  ).textContent =
+    app.size ||
+    "Unknown";
+
+
+
+  /* DESCRIPTION */
+
+  document.getElementById(
+    "detailsDescription"
+  ).textContent =
     app.description ||
     "No description available.";
 
 
+
+  /* DOWNLOAD */
+
+  const download =
+    document.getElementById(
+      "detailsDownload"
+    );
+
+
   if (
     app.download &&
-    app.download !== "YOUR_GOOGLE_DRIVE_LINK"
+    app.download !==
+      "YOUR_GOOGLE_DRIVE_APK_LINK"
   ) {
 
-    download.href = app.download;
+    download.href =
+      app.download;
 
-    download.target = "_blank";
+    download.target =
+      "_blank";
 
     download.rel =
       "noopener noreferrer";
@@ -1723,11 +2299,17 @@ function openDetails(index) {
     download.style.opacity =
       "1";
 
-  } else {
+  }
 
-    download.removeAttribute("href");
+  else {
 
-    download.removeAttribute("target");
+    download.removeAttribute(
+      "href"
+    );
+
+    download.removeAttribute(
+      "target"
+    );
 
     download.textContent =
       "Download Unavailable";
@@ -1737,20 +2319,29 @@ function openDetails(index) {
 
     download.style.opacity =
       "0.45";
+
   }
 
 
-  showScreen("detailsScreen");
+
+  /* OPEN DETAILS */
+
+  showScreen(
+    "detailsScreen"
+  );
+
 
   window.scrollTo({
     top: 0,
     behavior: "smooth"
   });
+
 }
 
 
+
 /* =========================================================
-   SCREEN SYSTEM
+   SCREEN NAVIGATION
    ========================================================= */
 
 function showScreen(screenId) {
@@ -1759,17 +2350,24 @@ function showScreen(screenId) {
     .querySelectorAll(".screen")
     .forEach(screen => {
 
-      screen.classList.remove("active");
+      screen.classList.remove(
+        "active"
+      );
 
     });
 
 
   const target =
-    document.getElementById(screenId);
+    document.getElementById(
+      screenId
+    );
+
 
   if (target) {
 
-    target.classList.add("active");
+    target.classList.add(
+      "active"
+    );
 
   }
 
@@ -1778,7 +2376,9 @@ function showScreen(screenId) {
     top: 0,
     behavior: "smooth"
   });
+
 }
+
 
 
 /* =========================================================
@@ -1788,24 +2388,93 @@ function showScreen(screenId) {
 function openTelegram() {
 
   if (
-    TELEGRAM_CHANNEL &&
-    TELEGRAM_CHANNEL !== "https://t.me/+uKLnUPsij7AwYzZl"
+    TELEGRAM_LINK &&
+    TELEGRAM_LINK !==
+      "https://t.me/+uKLnUPsij7AwYzZl"
   ) {
 
     window.open(
-      TELEGRAM_CHANNEL,
+      TELEGRAM_LINK,
       "_blank",
       "noopener,noreferrer"
     );
 
-  } else {
+  }
+
+  else {
 
     alert(
-      "Telegram channel link has not been added yet."
+      "Telegram link is not available yet."
     );
 
   }
+
 }
+
+
+
+/* =========================================================
+   YOUTUBE
+   ========================================================= */
+
+function openYouTube() {
+
+  if (
+    YOUTUBE_LINK &&
+    YOUTUBE_LINK !==
+      "YOUR_YOUTUBE_LINK"
+  ) {
+
+    window.open(
+      YOUTUBE_LINK,
+      "_blank",
+      "noopener,noreferrer"
+    );
+
+  }
+
+  else {
+
+    alert(
+      "YouTube link will be added soon."
+    );
+
+  }
+
+}
+
+
+
+/* =========================================================
+   INSTAGRAM
+   ========================================================= */
+
+function openInstagram() {
+
+  if (
+    INSTAGRAM_LINK &&
+    INSTAGRAM_LINK !==
+      "YOUR_INSTAGRAM_LINK"
+  ) {
+
+    window.open(
+      INSTAGRAM_LINK,
+      "_blank",
+      "noopener,noreferrer"
+    );
+
+  }
+
+  else {
+
+    alert(
+      "Instagram link will be added soon."
+    );
+
+  }
+
+}
+
 
 
 /* =========================================================
@@ -1814,31 +2483,58 @@ function openTelegram() {
 
 document
   .getElementById("searchInput")
-  .addEventListener("input", function() {
+  .addEventListener(
+    "input",
+    function() {
 
-    renderApps();
+      renderApps();
 
-  });
+    }
+  );
+
 
 
 /* =========================================================
-   LOAD SETTINGS / ABOUT / PRIVACY
+   LOAD SETTINGS
    ========================================================= */
 
-document.getElementById("settingsContent").innerHTML =
-  document.getElementById("settingsTemplate").innerHTML;
+document.getElementById(
+  "settingsContent"
+).innerHTML =
+  document.getElementById(
+    "settingsTemplate"
+  ).innerHTML;
 
-
-document.getElementById("aboutContent").innerHTML =
-  document.getElementById("aboutTemplate").innerHTML;
-
-
-document.getElementById("privacyContent").innerHTML =
-  document.getElementById("privacyTemplate").innerHTML;
 
 
 /* =========================================================
-   INITIAL LOAD
+   LOAD ABOUT
+   ========================================================= */
+
+document.getElementById(
+  "aboutContent"
+).innerHTML =
+  document.getElementById(
+    "aboutTemplate"
+  ).innerHTML;
+
+
+
+/* =========================================================
+   LOAD PRIVACY
+   ========================================================= */
+
+document.getElementById(
+  "privacyContent"
+).innerHTML =
+  document.getElementById(
+    "privacyTemplate"
+  ).innerHTML;
+
+
+
+/* =========================================================
+   INITIAL RENDER
    ========================================================= */
 
 renderCategories();
@@ -1846,38 +2542,59 @@ renderCategories();
 renderApps();
 
 
+
 /* =========================================================
    LOADING SCREEN
    ========================================================= */
 
-window.addEventListener("load", function() {
+window.addEventListener(
+  "load",
+  function() {
 
-  setTimeout(function() {
+    setTimeout(
+      function() {
 
-    const loading =
-      document.getElementById("loadingScreen");
+        const loading =
+          document.getElementById(
+            "loadingScreen"
+          );
 
-    if (loading) {
 
-      loading.style.opacity = "0";
+        if (loading) {
 
-      loading.style.transition =
-        "opacity 0.3s ease";
+          loading.style.opacity =
+            "0";
 
-      setTimeout(function() {
+          loading.style.transition =
+            "opacity 0.3s ease";
 
-        loading.style.display = "none";
 
-      }, 300);
+          setTimeout(
+            function() {
 
-    }
+              loading.style.display =
+                "none";
 
-  }, 600);
+            },
+            300
+          );
 
-});
+        }
+
+      },
+      600
+    );
+
+  }
+);
 
 
 </script>
+
+
+<!-- =====================================================
+     WEBSITE END
+     ===================================================== -->
 
 </body>
   </html>
